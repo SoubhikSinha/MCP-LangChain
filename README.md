@@ -1,1 +1,14 @@
-# MCP-LangChain
+# MCP-Powered AI Agents @ `LangGraph + Multi-Server MCP`
+
+This repo demonstrates the implementation of **tool-augmented AI agents** using the **Model Context Protocol (MCP)** to connect LLMs with multiple external servers through a unified interface. The system uses `FastMCP` to expose independent tool servers (`mathServer.py` and `weather.py`) and integrates them into a centralized agent workflow via `MultiServerMCPClient`. The `mathServer.py` module provides structured arithmetic tools along with a secure AST-based expression evaluator for compound calculations, while `weather.py` implements an asynchronous weather retrieval service using the Open-Meteo APIs with geocoding and live weather lookups. The `client.py` module orchestrates these MCP servers using `LangGraph`’s `create_react_agent`, enabling a Groq-powered LLM (`qwen/qwen3-32b`) to dynamically select and invoke tools through both `stdio` and `streamable-http` transports. Overall, the project highlights MCP-based tool communication, agent-tool interoperability, secure function execution, multi-server orchestration, and scalable agentic workflow design for production-style AI systems.
+
+<br>
+<br>
+
+## References
+[Krish Naik](https://github.com/krishnaik06)<br>
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)<br>
+[LangGraph](https://github.com/langchain-ai/langgraph)<br>
+[FastMCP](https://github.com/jlowin/fastmcp)<br>
+[Open-Meteo API](https://open-meteo.com/)<br>
+[Groq](https://github.com/groq/groq-python)
